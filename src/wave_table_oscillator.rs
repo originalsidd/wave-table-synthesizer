@@ -10,10 +10,10 @@ pub mod wave_table_oscillator {
 	}
 	
 	impl Oscillator {
-		pub fn new(sample_rate: u32, wave_table: Vec<f32>) -> Oscillator {
+		pub fn new(sample_rate: u32, wave_table: &Vec<f32>) -> Oscillator {
 			Oscillator {
 				sample_rate: sample_rate,
-				wave_table: wave_table,
+				wave_table: wave_table.to_vec(),
 				index: 0.0,
 				index_step: 0.0,
 			}
